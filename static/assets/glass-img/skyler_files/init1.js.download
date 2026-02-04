@@ -1,0 +1,103 @@
+//<script>
+bouncex.init1Response({
+    "brand_styles": false,
+    "webfonts": false,
+    "cookie": {
+        "swv": false,
+        "did": "5142021768175382041",
+        "vid": 1734347792917181,
+        "v": {
+            "logged_in": false,
+            "ever_logged_in": false,
+            "items_in_cart": false,
+            "submitted_onsite": false,
+            "cart_total": 0,
+            "cart": false,
+            "has_minimized": false,
+            "cart_coupon_copied": false,
+            "cart_set": false,
+            "tracked_cart_images": false,
+            "logged_in_identified": false,
+            "osr_items": false
+        },
+        "pdFirstLoad": true,
+        "dg": {
+            "isPreviousCustomer": false,
+            "isSubscriber": false,
+            "isTextSubscriber": false,
+            "cache_ts": 1734347793672
+        },
+        "hardID": "2qIQpYEcseZdzuCR3ooR2YvC7RV",
+        "softID": "2qIQpY7B5w8tqBJ3OG7UTwKjhLX",
+        "fvt": 1734348152,
+        "ao": 0,
+        "lp": "https%3A%2F%2Fwww.ray-ban.com%2Fusa%2Fsunglasses%2Faviator%3Fmsockid%3D3ba381d86c0e690c25609243680e6fb3",
+        "as": 0,
+        "vpv": 5,
+        "d": "d",
+        "r": "www.bing.com",
+        "cvt": 1734347792,
+        "sid": 18,
+        "gcr": 50,
+        "m": 0,
+        "lvt": 1734348152,
+        "hcs_usaeyeglasses": 1
+    },
+    "debug": false,
+    "testmode": {
+        "bxtest": false,
+        "office": false,
+        "bxdev": false
+    },
+    "state": {
+        "newvid": false,
+        "iol": false,
+        "tn": 1734348152,
+        "pvid": 5,
+        "gdpr": false,
+        "casl": false,
+        "us": false,
+        "device": {
+            "browser": "Chrome",
+            "version": "131.0.0.0",
+            "platform": "Windows 10",
+            "device_type": "desktop"
+        },
+        "no_kinesis": true,
+        "request_token": "b3f805fc05db94678b56c33d98c6a65dc3f479853272f253942b69d41c9876c6",
+        "mobile": false,
+        "vip": "27.34.66.202",
+        "geo": {
+            "country": "NP",
+            "country_code": "NP",
+            "country_code3": "NPL",
+            "country_name": "Nepal",
+            "region": "P3",
+            "region_name": "Bagmati Province",
+            "city": "Kathmandu",
+            "postal_code": null,
+            "zip": null,
+            "latitude": 27.699999999999999,
+            "longitude": 85.299999999999997,
+            "area_code": "",
+            "dma_code": null,
+            "metro_code": null,
+            "continent_code": "AS"
+        }
+    },
+    "gbi_stacks": false,
+    "creatives": false,
+    "campaigns": false,
+    "gbi2_enabled": false,
+    "ssp_config": false,
+    "push_filepath": "\/",
+    "sms_enabled": false,
+    "sms_terms_conditions_link": "",
+    "sms_short_codes": [],
+    "brand_name": "Ray-Ban",
+    "ads_config": {},
+    "visit_cookie_updates": {
+        "is_go_session": false,
+        "is_gp_session": false
+    }
+});

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="/static/faceshapefinder.css" rel="stylesheet">
+    <title>AI Face Shape Analysis | EYE WEAR</title>
+</head>
+<body class="light-theme">
+
+<div class="top-nav">
+    <a href="/" class="logo">EYE WEAR</a>
+    <a href="/" class="back-link"><span class="material-symbols-outlined">arrow_back</span> Back to Store</a>
+</div>
+
+<section id="head">
+    <div class="video-container">
+        <video autoplay muted loop playsinline>
+            <source src="/static/assets/decor/face_scan_bg.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="content">
+        <div class="text-reveal">
+            <span class="kicker">Advanced Vision AI</span>
+            <h1>Discover Your Face Shape.</h1>
+            <p>Our algorithm analyzes 68 unique facial landmarks to find your perfect architectural frame match.</p>
+            <div class="buttons">
+                <button class="button gold" onclick="openModal()">Start Scan Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Analysis Modal -->
+<div id="photoModal" class="modal">
+    <div class="modal-window">
+        <button class="close-modal" onclick="closeModal()">&times;</button>
+        <div class="modal-layout">
+            <div class="webcam-pane">
+                <video id="webcam1" autoplay playsinline></video>
+                <canvas id="photoCanvas" style="display:none;"></canvas>
+                
+                <div class="cam-controls">
+                    <button id="capture" class="btn-primary">Capture Profile</button>
+                    <button id="recapturePhoto" class="btn-outline" style="display:none;">Retake</button>
+                    <button id="submitPhoto" class="btn-gold" style="display:none;">Analyze Shape</button>
+                </div>
+            </div>
+            <div class="tips-pane">
+                <h2>Analysis Guide</h2>
+                <div class="tip-item">
+                    <span class="num">01</span>
+                    <p>Ensure your face is well-lit and centered in the guide.</p>
+                </div>
+                <div class="tip-item">
+                    <span class="num">02</span>
+                    <p>Keep a neutral expression for maximum accuracy.</p>
+                </div>
+                <div class="tip-item">
+                    <span class="num">03</span>
+                    <p>Remove glasses or hats that might obstruct landmarks.</p>
+                </div>
+                <div class="scan-animation">
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Analyzing State -->
+<section id="analyze-result">
+    <div class="spinner-container">
+        <div class="gold-spinner"></div>
+        <h2 id="analyze-text">Processing Geometry...</h2>
+        <div class="progress-track">
+            <div class="progress-bar" id="p-bar"></div>
+        </div>
+        <p id="loader-description">Mapping facial landmarks against our global database.</p>
+    </div>
+</section>
+
+<section id="how-it-works" class="info-section">
+    <div class="info-container">
+        <div class="info-header">
+            <span class="kicker">The Process</span>
+            <h2>Precision at Scale.</h2>
+            <p>Our analysis goes beyond basic shapes, calculating ratios that define your unique facial structure.</p>
+        </div>
+        <div class="info-grid">
+            <div class="info-item">
+                <span class="material-symbols-outlined icon">analytics</span>
+                <h3>68 Point Mapping</h3>
+                <p>We use industry-standard facial landmarking to create a digital topography of your face.</p>
+            </div>
+            <div class="info-item">
+                <span class="material-symbols-outlined icon">square_foot</span>
+                <h3>Geometry Ratios</h3>
+                <p>Analyzing the ratio between your forehead, cheekbones, and jawline to find your perfect match.</p>
+            </div>
+            <div class="info-item">
+                <span class="material-symbols-outlined icon">auto_awesome</span>
+                <h3>Style Calibration</h3>
+                <p>Instantly matching your proportions with thousands of frame designs from our curated vault.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="shape-science" class="info-section alternate">
+    <div class="info-container reverse">
+        <div class="info-visual">
+            <img src="/static/assets/decor/shape-guide.png" class="floating-img" alt="Shape Science">
+        </div>
+        <div class="info-text">
+            <span class="kicker">The Science</span>
+            <h2>Architectural Harmony.</h2>
+            <p>Eyewear is more than just vision—it's architecture for the face. The right frames can balance features, soften angles, or emphasize your eyes. By understanding your facial geometry, you can choose frames that create perfect visual harmony.</p>
+            <ul class="check-list">
+                <li><span class="check-icon">✓</span> Contrast is Key: Angular frames for round faces.</li>
+                <li><span class="check-icon">✓</span> Proportional Scale: Frames that match your face size.</li>
+                <li><span class="check-icon">✓</span> Feature Emphasis: Drawing attention where you want it.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Final Results -->
+<section id="show-result" class="draw" style="display:none;">
+    <div class="result-hero">
+        <div class="result-text">
+            <span class="kicker">Your Analysis</span>
+            <h1 id="shape-result">OVAL</h1>
+            <p id="shape-description">Your proportions are balanced, allowing for maximum versatility in frame selection.</p>
+        </div>
+        <div class="result-visual">
+            <img id="face-cam-shape" src="" alt="Captured Profile">
+            <div class="gold-ring"></div>
+        </div>
+    </div>
+
+    <div class="recommendations-container">
+        <div class="section-title">
+            <h3>Curated For Your Geometry</h3>
+            <p>These frames have been selected based on your unique facial measurements.</p>
+        </div>
+        <div id="showglass" class="carousel-container1">
+            <div class="carousel-wrapper">
+                <div class="carousel" id="glasses-list">
+                    <!-- Dynamic Items -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Virtual Try-On Popup -->
+<div class="popup-tryon" id="popup-tryon">
+    <div class="popup-container">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <div class="cam-wrapper">
+            <video id="webcam" autoplay playsinline></video>
+            <canvas id="threeCanvas"></canvas>
+            <canvas id="mpCanvas"></canvas>
+        </div>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="f-col main">
+            <h2 class="f-logo">OPTICAL</h2>
+            <p>Advancing the intersection of computer vision and personal style.</p>
+        </div>
+        <div class="f-col">
+            <h4>Quick Nav</h4>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/face-shape-identification">AI Scanner</a></li>
+                <li><a href="/#feature">Collections</a></li>
+            </ul>
+        </div>
+        <div class="f-col newsletter">
+            <h4>Insights</h4>
+            <p>Receive updates on new AI features and collection drops.</p>
+            <div class="input-group">
+                <input type="email" placeholder="email@example.com">
+                <button>Join</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 OPTICAL Inc. AI Vision Series.</p>
+    </div>
+</footer>
+
+<script type="importmap">
+  {
+      "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "threeOrbitControls": "https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js", 
+          "threeGLTFLoader" : "https://unpkg.com/three@0.160.0/examples/jsm/loaders/GLTFLoader.js"
+      }
+  }
+</script>
+<script id="myScript" src="/static/tryon.js" type="module"></script>
+<script src="/static/faceshapefinder.js"></script>
+</body>
+</html>

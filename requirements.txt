@@ -1,0 +1,12 @@
+flask
+flask-cors
+pymysql
+mysql-connector-python
+opencv-python
+numpy
+wtforms
+pillow
+werkzeug
+tensorflow
+mtcnn
+# matplotlib (imported but maybe not used in production)
