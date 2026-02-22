@@ -9,4 +9,4 @@ pillow
 werkzeug
 tensorflow
 mtcnn
-# matplotlib (imported but maybe not used in production)
+matplotlib

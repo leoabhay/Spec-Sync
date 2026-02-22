@@ -1,13 +1,8 @@
-
-// import { FilesetResolver, FaceLandmarker } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest";
-// import { FilesetResolver, FaceLandmarker  } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest";
-
 import vision from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3";
 const { FaceLandmarker, FilesetResolver, DrawingUtils } = vision;
 
 import * as THREE from 'three';
 import { OrbitControls } from 'threeOrbitControls';
-// import CameraControls from 'camera-controls';
 import { GLTFLoader } from "threeGLTFLoader";
 // import { DrawingUtils } from "@mediapipe/tasks-vision";
 
@@ -264,22 +259,9 @@ function predict() {
 }
 
 
-
-
-// -------------------------------------------------------------------------------------------------------
-// -------------------------------------------------------------------------------------------------------
-// -------------------------------------------------------------------------------------------------------
-// -------------------------------------------------------------------------------------------------------
-// -------------------------------------------------------------------------------------------------------
-
-
-
 function clearPreviousDrawings() {
     canvasCtx.clearRect(0, 0, width, height);
 }
-
-
-
 
 let model = null;
 let lastFrameTime = 0;
@@ -650,12 +632,6 @@ function createCube() {
     return new THREE.Mesh(geometry, materials);
 }
 
-
-
-
-
-
-
 function updatePlanePosition() {
     const cameraDirection = new THREE.Vector3();
     camera.getWorldDirection(cameraDirection);  // Get the direction the camera is facing
@@ -663,9 +639,6 @@ function updatePlanePosition() {
     plane.position.copy(camera.position).add(cameraDirection.multiplyScalar(planeDistance));  // Position the plane
     plane.rotation.copy(camera.rotation);  // Match the plane's rotation to the camera's
 }
-
-
-
 
 // Setup prediction listener
 export function setupPredictionListener() {
